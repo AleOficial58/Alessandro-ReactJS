@@ -1,0 +1,42 @@
+.brand {
+    font-family: 'Impact', normal;
+    font-size: 40px;
+    color: #aa9585;
+}
+
+.menu {
+    font-family: 'Impact', normal;
+    font-size: 40px;
+    color: #aa9585;
+}
+.material-symbols-outlined {
+    font-size: 40px;
+}
+
+
+.cartShop {
+    padding: 16px;
+    font-family: 'Impact', cursive;
+    font-size: 40px;
+    color: #aa9585;;
+}
+
+.greeting {
+    padding-top: 16px;
+    text-align: center;
+    font-size: xx-large;
+    color: #aa9585;
+    font-family:'Impact', cursive;
+}
+.numeroContador {
+    font-size: x-large;
+    font-family: 'Impact';
+    margin: 1rem;
+}
+.contador {
+    margin-left: 15px;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
