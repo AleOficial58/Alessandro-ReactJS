@@ -32,7 +32,7 @@ const ItemDetail = ({ productos }) => {
                   <Text>{p.categoria}</Text>
                 </CardBody>
                 <CardFooter>
-                  <ItemCount />
+                  <ItemCount producto={p} />
                 </CardFooter>
               </Card>
             </Center>

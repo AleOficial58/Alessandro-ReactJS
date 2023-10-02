@@ -4,8 +4,6 @@ import { Grid, GridItem, Img } from "@chakra-ui/react";
 import React from "react";
 import { useParams } from "react-router-dom";
 
-
-
 const ItemListContainer = () => {
 const {categoria} = useParams ()
 
@@ -36,8 +34,6 @@ const {categoria} = useParams ()
       precio: 17000,
     },
   ];
-
-
 
   const getProductos = new Promise((resolve, reject) => {
     if (productos.length > 0) {
