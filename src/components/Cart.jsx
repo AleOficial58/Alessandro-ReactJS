@@ -36,9 +36,7 @@ const Cart = () => {
         confirmButtonText: 'Aceptar',
       });
     } else {
-      // Realiza la lógica para finalizar la compra con los datos ingresados
-      // Puedes usar los valores de 'nombre', 'apellido', 'dni' y 'email' en esta función
-      // ...
+
       Swal.fire({
         title: 'Compra finalizada',
         text: `¡Gracias por tu compra, ${nombre} ${apellido}! Hemos enviado la confirmación a ${email}`,

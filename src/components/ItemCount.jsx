@@ -10,14 +10,13 @@ const ItemCount = ({ producto }) => {
     React.useEffect(() => {
 
     }, [])
-    //Funcion para sumar en el contador hasta maximo 10 unidades
+    
     const sumarContador = () => {
         if (contador < 10) {
             setContador(contador + 1)
         }
     }
 
-    //Funcion para restar el contador hasta 0
     const restarContador = () => {
         if (contador > 0) {
             setContador(contador - 1)
@@ -37,8 +36,7 @@ const ItemCount = ({ producto }) => {
         }
     }
 
-    //Primero tenes que ver si en el carrito ya existe el producto que estas queriendo agregar, 
-    //si existe le sumas uno, sino agregar la cantidad que elegiste.
+
 
     return (
         <>
