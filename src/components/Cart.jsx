@@ -4,7 +4,8 @@ import { Button, Input } from "@chakra-ui/react";
 import { CartContext } from '../Contexts/Context'
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
-let navigate = useNavigate();
+
+
 //instanciar el contexto de los productos para mostrarlos y cuando le das a confimar comprar enviarlos a firebae
 //con la funcion Finalizar Compra
 // Una vez que esta todo ok redireccionar a la pagina principal y boorar los datos del context navigate("/");
@@ -33,7 +34,7 @@ const Cart = () => {
 
   const handleFinalizarCompra = () => {
     if (nombre.trim() === '' || apellido.trim() === '' || dni.trim() === '' || email.trim() === '') {
-      FinalizarCompra()
+      FinalizarCompra(productos)
       Swal.fire({
         title: 'Error',
         text: 'Por favor, completa todos los campos',
@@ -41,11 +42,13 @@ const Cart = () => {
         confirmButtonText: 'Aceptar',
       });
     } else {
+
       // Realiza la lógica para finalizar la compra con los datos ingresados
       // Puedes usar los valores de 'nombre', 'apellido', 'dni' y 'email' en esta función
       // ...
 
       // Ejemplo de mensaje de compra finalizada (debes implementar la lógica real aquí)
+
       Swal.fire({
         title: 'Compra finalizada',
         text: `¡Gracias por tu compra, ${nombre} ${apellido}! Hemos enviado la confirmación a ${email}`,
