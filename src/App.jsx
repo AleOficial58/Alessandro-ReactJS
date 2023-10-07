@@ -7,6 +7,7 @@ import ItemList from "./components/ItemList";
 import ItemDetail from "./components/ItemDetail";
 import { ShopContext } from "./Contexts/Context";
 import Document from "./components/Document";
+import Collection from "./components/Document";
 
 const App = () => {
 
@@ -26,7 +27,8 @@ const App = () => {
       </BrowserRouter>
     </ShopContext> */}
 
-    <Document/>
+    {/*<Document/>*/}
+    <Collection/>
 
     </>
 
