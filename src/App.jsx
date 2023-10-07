@@ -14,7 +14,7 @@ const App = () => {
   return (
     <>
 
-    {/*<ShopContext>
+    <ShopContext>
       <BrowserRouter>
         <NavBar />
 
@@ -25,7 +25,7 @@ const App = () => {
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
       </BrowserRouter>
-    </ShopContext> */}
+    </ShopContext> 
 
     {/*<Document/>*/}
     <Collection/>
