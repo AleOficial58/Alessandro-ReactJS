@@ -3,9 +3,15 @@ import { collection, getDocs, getFirestore } from "firebase/firestore"
 
 
 const Collection = () => {
-  return (
-    <div>Collection</div>
-  )
+  const [products, setProducts] = useState([])
+  console.log(products)
 
+useEffect(()=>{
+
+},[])
+
+return(
+  <div>Collection</div>
+)
   
 }
