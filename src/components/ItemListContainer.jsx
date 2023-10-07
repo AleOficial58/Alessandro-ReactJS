@@ -15,7 +15,8 @@ const {categoria} = useParams ()
       stock: 10,
       categoria: "SIS1",
       precio: 2050,
-      Moneda: "USD"
+      Moneda: "USD",
+      Imagen: "./images/Foto1.jpeg"
     },
     {
       id: 2,
@@ -24,15 +25,26 @@ const {categoria} = useParams ()
       stock: 7,
       categoria: "SIS1",
       precio: 7000,
+      Imagen: "./images/Foto1.jpeg"
     },
     {
       id: 3,
-      nombre: "REACT JS, Backend + Tecnologias JavaScript, TypeScript y C++ ",
+      nombre: "REACT JS, Backend + Tecnologias JavaScript, TypeScript y C++",
       descripcion: "LISTA PARA SALIR A PELEAR",
       stock: 3,
       categoria: "SIS1",
       precio: 17000,
+      Imagen: "./images/Foto1.jpeg"
     },
+    {
+      id: 4,
+      nombre: "Mantenimiento",
+      descripcion: "productos de mantenimiento",
+      stock: 10,
+      categoria: "SIS2",
+      precio: 23000,
+      Imagen: "./images/Foto1.jpeg"
+    },  
   ];
 
   const getProductos = new Promise((resolve, reject) => {

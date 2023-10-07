@@ -6,11 +6,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ItemList from "./components/ItemList";
 import ItemDetail from "./components/ItemDetail";
 import { ShopContext } from "./Contexts/Context";
+import Document from "./components/Document";
 
 const App = () => {
 
   return (
-    <ShopContext>
+    <>
+
+    {/*<ShopContext>
       <BrowserRouter>
         <NavBar />
 
@@ -21,8 +24,15 @@ const App = () => {
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
         </Routes>
       </BrowserRouter>
-    </ShopContext>
+    </ShopContext> */}
+
+    <Document/>
+
+    </>
+
   );
 };
+
+
 
 export default App;

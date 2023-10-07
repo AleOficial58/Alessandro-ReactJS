@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Sistemas de Formateo",
+      "price": 8000,
+      "imgUrl": "assets/Foto1.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "Pagina web FrontEnd",
+      "price": 134000,
+      "imgUrl": "./images/Foto1.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "Pagina BackEnd",
+      "price": 400,
+      "imgUrl": "./images/Foto1.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "Pagina WordPress",
+      "price": 550,
+      "imgUrl": "./images/Foto1.jpeg"
+    }
+  ]
+  

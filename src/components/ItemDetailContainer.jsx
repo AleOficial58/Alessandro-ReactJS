@@ -21,6 +21,7 @@ const ItemDetailContainer = () => {
       stock: 7,
       categoria: "",
       precio: 7000,
+      Moneda: "USD"
     },
     {
       id: 3,
@@ -29,6 +30,16 @@ const ItemDetailContainer = () => {
       stock: 3,
       categoria: "",
       precio: 17000,
+      Moneda: "USD"
+    },
+    {
+      id: 4,
+      nombre: "Mantenimiento",
+      descripcion: "productos de mantenimiento",
+      stock: 10,
+      categoria: "SIS2",
+      precio: 23000,
+      Moneda: "USD"
     }
 
     

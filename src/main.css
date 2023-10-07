@@ -40,3 +40,24 @@
     justify-content: center;
 }
 
+
+/* main.css */
+.cart-container {
+    /* Aplica flexbox para centrar el contenido horizontalmente */
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente (opcional) */
+    height: 100vh; /* Ajusta la altura del contenedor según tus necesidades */
+  }
+  
+  .finalizar-compra-button {
+    /* Estilos CSS para el botón de Finalizar Compra */
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    /* Agrega más estilos según sea necesario */
+  }
+  
