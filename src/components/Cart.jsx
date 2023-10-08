@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { FinalizarCompra } from "../JS/Carrito";
+import React, { useState, useContext } from "react";
 import { Button, Input } from "@chakra-ui/react";
-import { CartContext } from '../Contexts/Context'
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
-
+import { CartContext } from '../Contexts/Context';
+import { FinalizarCompra } from "../JS/Carrito";
 
 //instanciar el contexto de los productos para mostrarlos y cuando le das a confimar comprar enviarlos a firebae
 //con la funcion Finalizar Compra
@@ -15,6 +14,11 @@ const Cart = () => {
   const [apellido, setApellido] = useState('');
   const [dni, setDNI] = useState('');
   const [email, setEmail] = useState('');
+
+  // Obtén el contexto de los productos del carrito
+  const { productos } = useContext(CartContext);
+
+  const navigate = useNavigate();
 
   const handleNombreChange = (e) => {
     setNombre(e.target.value);
@@ -34,7 +38,6 @@ const Cart = () => {
 
   const handleFinalizarCompra = () => {
     if (nombre.trim() === '' || apellido.trim() === '' || dni.trim() === '' || email.trim() === '') {
-      FinalizarCompra(productos)
       Swal.fire({
         title: 'Error',
         text: 'Por favor, completa todos los campos',
@@ -49,12 +52,16 @@ const Cart = () => {
 
       // Ejemplo de mensaje de compra finalizada (debes implementar la lógica real aquí)
 
+
       Swal.fire({
         title: 'Compra finalizada',
         text: `¡Gracias por tu compra, ${nombre} ${apellido}! Hemos enviado la confirmación a ${email}`,
         icon: 'success',
         confirmButtonText: 'Aceptar',
       });
+
+      // Redirige al usuario a la página principal
+      navigate("/");
     }
   };
 
