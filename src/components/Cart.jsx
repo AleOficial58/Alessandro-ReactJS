@@ -73,15 +73,7 @@ const Cart = () => {
         {/* Elementos del carrito van aquí */}
       </div>
       
-      {/* Formulario para ingresar datos */}
-      <h3>Información del comprador</h3>
-      <div className="input-container">
-        <Input placeholder="Nombre" value={nombre} onChange={handleNombreChange} />
-        <Input placeholder="Apellido" value={apellido} onChange={handleApellidoChange} />
-        <Input placeholder="DNI" value={dni} onChange={handleDNIChange} />
-        <Input placeholder="Email" value={email} onChange={handleEmailChange} />
-        <Button onClick={handleFinalizarCompra}>Finalizar Compra</Button>
-      </div>
+      
     </div>
   );
 };
