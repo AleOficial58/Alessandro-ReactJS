@@ -27,14 +27,14 @@ const ItemCount = ({ producto }) => {
         if (contador > 0) {
             debugger
             let prod = {
-                idProducto: producto.id,
+                ...producto,
                 cantidad: contador,
-                precio: producto.precio
+              
             }
             debugger
             setCart([...cart, prod])
-        }
-    }
+        }
+    }
 
 
 

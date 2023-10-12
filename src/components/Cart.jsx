@@ -16,7 +16,7 @@ const Cart = () => {
   const [email, setEmail] = useState('');
 
   // Obtén el contexto de los productos del carrito
-  const { productos } = useContext(CartContext);
+  const [cart] = useContext(CartContext);
 
   const navigate = useNavigate();
 
