@@ -8,6 +8,7 @@ import ItemDetail from "./components/ItemDetail";
 import { ShopContext } from "./Contexts/Context";
 import Document from "./components/Document";
 import Collection from "./components/Document";
+import Checkout from "./components/Checkout";
 
 const App = () => {
 
@@ -20,6 +21,7 @@ const App = () => {
 
         <Routes>
           <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/checkout" element={<Checkout />} />
           <Route exact path="/" element={<ItemListContainer />} />
           <Route path="/categoria/:categoria" element={<ItemListContainer />} />
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
@@ -37,4 +39,4 @@ const App = () => {
 
 
 
-export default App;
+export default App;

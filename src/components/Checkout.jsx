@@ -3,48 +3,73 @@ import { Button, Input } from "@chakra-ui/react";
 import Swal from 'sweetalert2';
 import { useNavigate } from "react-router-dom";
 import { CartContext } from '../Contexts/Context';
-import { FinalizarCompra } from "../JS/Carrito";
 
 function Checkout() {
-  // Puedes declarar estados aquí si los necesitas
-  const [contador, setContador] = useState(0);
-  const { cart, setCart } = useContext(CartContext);
+  const [nombre, setNombre] = useState('');
+  const [apellido, setApellido] = useState('');
+  const [dni, setDNI] = useState('');
+  const [email, setEmail] = useState('');
+
+  // Obtén el contexto de los productos del carrito
+  const [cart] = useContext(CartContext);
+
   const navigate = useNavigate();
 
-  // Función onAdd
-  const onAdd = () => {
-    if (contador > 0) {
-      let prod = {
-        // Aquí debes especificar la estructura de tu producto
-        // Ejemplo: nombre, precio, etc.
-        cantidad: contador,
-      };
-      setCart([...cart, prod]);
+  const handleNombreChange = (e) => {
+    setNombre(e.target.value);
+  };
 
-      // Puedes agregar código adicional aquí, como una alerta con SweetAlert2
-      Swal.fire("Producto agregado al carrito");
-    }
-  }
+  const handleApellidoChange = (e) => {
+    setApellido(e.target.value);
+  };
 
-  // Función para finalizar la compra
+  const handleDNIChange = (e) => {
+    setDNI(e.target.value);
+  };
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
   const handleFinalizarCompra = () => {
-    // Aquí puedes llamar a la función que finaliza la compra
-    FinalizarCompra();
-    
-    // Puedes agregar navegación o redirección a otra página aquí
-    navigate("/ruta-de-exito");
-  }
+    if (nombre.trim() === '' || apellido.trim() === '' || dni.trim() === '' || email.trim() === '') {
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor, completa todos los campos',
+        icon: 'error',
+        confirmButtonText: 'Aceptar',
+      });
+    } else {
+
+      // Realiza la lógica para finalizar la compra con los datos ingresados
+      // Puedes usar los valores de 'nombre', 'apellido', 'dni' y 'email' en esta función
+      // ...
+
+      // Ejemplo de mensaje de compra finalizada (debes implementar la lógica real aquí)
+      Swal.fire({
+        title: 'Compra finalizada',
+        text: `¡Gracias por tu compra, ${nombre} ${apellido}! Hemos enviado la confirmación a ${email}`,
+        icon: 'success',
+        confirmButtonText: 'Aceptar',
+      });
+
+      // Redirige al usuario a la página principal
+      navigate("/");
+    }
+  };
 
   return (
     <div>
-      {/* Aquí puedes renderizar tus componentes y elementos JSX */}
-      <Input
-        type="number"
-        value={contador}
-        onChange={(e) => setContador(e.target.value)}
-      />
-      <Button onClick={onAdd}>Agregar al carrito</Button>
+     {/* Formulario para ingresar datos */}
+
+      <h3>Información del comprador</h3>
+      <div className="input-container">
+      <Input placeholder="Nombre" value={nombre} onChange={handleNombreChange} />
+      <Input placeholder="Apellido" value={apellido} onChange={handleApellidoChange} />
+      <Input placeholder="DNI" value={dni} onChange={handleDNIChange} />
+      <Input placeholder="Email" value={email} onChange={handleEmailChange} />
       <Button onClick={handleFinalizarCompra}>Finalizar Compra</Button>
+</div>
 
       {/* Puedes agregar más componentes y lógica aquí */}
     </div>
