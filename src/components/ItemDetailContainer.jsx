@@ -7,42 +7,46 @@ const ItemDetailContainer = () => {
   const productos = [
     {
       id: 1,
-      nombre: "PAGINA WEB DESARROLLO FULL STACK",
+      nombre: "Desarrollo Web Full Sack",
       descripcion: "Desarrollo de una web completa",
       stock: 10,
       categoria: "",
       precio: 2050,
-      Moneda: "USD"
+      Moneda: "USD",
+      Imagen: "./images/Foto1.jpeg"
     },
     {
       id: 2,
-      nombre: "Backend Pagina",
+      nombre: "JavaScript",
       descripcion: "La pagina mas desarrollada del mundo",
       stock: 7,
       categoria: "",
       precio: 7000,
-      Moneda: "USD"
+      Moneda: "USD",
+      Imagen: "./images/Foto1.jpeg"
     },
     {
       id: 3,
-      nombre: "REACT JS, Backend + Tecnologias JavaScript, TypeScript y C++ ",
+      nombre: "React JS",
       descripcion: "LISTA PARA SALIR A PELEAR",
       stock: 3,
       categoria: "",
       precio: 17000,
-      Moneda: "USD"
+      Moneda: "USD",
+      Imagen: "./images/Foto1.jpeg"
     },
     {
       id: 4,
-      nombre: "Mantenimiento",
+      nombre: "Mantenimiento Web",
       descripcion: "productos de mantenimiento",
       stock: 10,
       categoria: "SIS2",
       precio: 23000,
-      Moneda: "USD"
+      Moneda: "USD",
+      Imagen: "./images/Foto1.jpeg"
     }
 
-    
+
   ];
 
 
@@ -57,11 +61,11 @@ const ItemDetailContainer = () => {
   });
 
   getProductos
-  .then((res) =>{
-  })
-  .catch((error) =>{
-    console.log(error);
-  })
+    .then((res) => {
+    })
+    .catch((error) => {
+      console.log(error);
+    })
 
   return (
     <>

@@ -11,7 +11,7 @@ const {categoria} = useParams ()
   const productos = [
     {
       id: 1,
-      nombre: "PAGINA WEB DESARROLLO FULL STACK",
+      nombre: "Desarrollo Web Full Sack",
       descripcion: "Desarrollamos tu pagina web con todas las tecnologias",
       stock: 10,
       categoria: "SIS1",
@@ -21,7 +21,7 @@ const {categoria} = useParams ()
     },
     {
       id: 2,
-      nombre: "Backend Pagina",
+      nombre: "JavaScript",
       descripcion: "La pagina mas desarrollada del mundo",
       stock: 7,
       categoria: "SIS1",
@@ -30,7 +30,7 @@ const {categoria} = useParams ()
     },
     {
       id: 3,
-      nombre: "REACT JS, Backend + Tecnologias JavaScript, TypeScript y C++",
+      nombre: "React JS",
       descripcion: "LISTA PARA SALIR A PELEAR",
       stock: 3,
       categoria: "SIS1",
@@ -39,7 +39,7 @@ const {categoria} = useParams ()
     },
     {
       id: 4,
-      nombre: "Mantenimiento",
+      nombre: "Mantenimiento Web",
       descripcion: "productos de mantenimiento",
       stock: 10,
       categoria: "SIS2",

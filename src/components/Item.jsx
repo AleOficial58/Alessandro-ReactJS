@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardBody,
@@ -14,6 +14,8 @@ import {
   GridItem,
   Center,
   CardHeader,
+  Container,
+  Box,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import logo from '../assets/Foto1.jpeg';
@@ -30,27 +32,35 @@ const Item = ({ producto }) => {
   // console.log(producto);
   return (
     <>
-      <Card>
+      <Card mt="4">
         <CardBody>
-        <img src={producto.Imagen} width="80" height="55" />
-        {/* <img src={require(producto.Imagen).default} /> */}
-          {/* <img src={logo} /> */}
-          {/* <Image
-            src={producto.Imagen}
-          /> */}
+          <Container maxW='sm' centerContent>
+            <img src={producto.Imagen} width="360" height="85" />
+          </Container>
           <Stack>
-            <Heading size='md'>{producto.nombre}</Heading>
-            <Text>
-
-            </Text>
+            <Container maxW='sm'>
+              <Box pt="4" >
+                <Heading size='md'>{producto.nombre}</Heading>
+              </Box>
+              <Box pt="4" h="62px">
+                <Text>
+                  {producto.descripcion}
+                </Text>
+                <Text>
+                  $ {producto.precio}
+                </Text>
+              </Box>
+            </Container>
           </Stack>
         </CardBody>
         <CardFooter>
-          <Link to={`/item/${producto.id}`}>
-            <Button variant="solid" colorScheme="blue">
-              Detalle
-            </Button>
-          </Link>
+          <Container maxW='sm'>
+            <Link to={`/item/${producto.id}`}>
+              <Button variant="solid" colorScheme="blue">
+                Detalle
+              </Button>
+            </Link>
+          </Container>
         </CardFooter>
       </Card>
     </>
