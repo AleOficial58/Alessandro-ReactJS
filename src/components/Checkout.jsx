@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from '../Contexts/Context';
 import { FinalizarCompra } from '../JS/Carrito'
 
+
 function Checkout() {
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
@@ -65,22 +66,17 @@ function Checkout() {
             confirmButtonText: 'Aceptar',
           });
         })
-      // Realiza la lógica para finalizar la compra con los datos ingresados
-      // Puedes usar los valores de 'nombre', 'apellido', 'dni' y 'email' en esta función
-      // ...
 
-      // Ejemplo de mensaje de compra finalizada (debes implementar la lógica real aquí)
-
-
-      // Redirige al usuario a la página principal
     }
   };
+
+  
 
   return (
     <div>
       {/* Formulario para ingresar datos */}
 
-      <h3>Información del comprador</h3>
+      <h3 className="input-informacion">Información del comprador</h3>
       <div className="input-container">
         <Input placeholder="Nombre" value={nombre} onChange={handleNombreChange} />
         <Input placeholder="Apellido" value={apellido} onChange={handleApellidoChange} />
@@ -89,8 +85,9 @@ function Checkout() {
         <Button onClick={handleFinalizarCompra} disabled={loading}>Finalizar Compra</Button>
       </div>
 
-      {/* Puedes agregar más componentes y lógica aquí */}
     </div>
+
+    
   );
 }
 

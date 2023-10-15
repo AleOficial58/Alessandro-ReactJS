@@ -4,9 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from '../Contexts/Context';
 import { Box, Button, Center, Container, Stack, Text } from "@chakra-ui/react";
 
-//instanciar el contexto de los productos para mostrarlos y cuando le das a confimar comprar enviarlos a firebae
-//con la funcion Finalizar Compra
-// Una vez que esta todo ok redireccionar a la pagina principal y boorar los datos del context navigate("/");
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);

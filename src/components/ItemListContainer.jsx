@@ -40,7 +40,7 @@ const {categoria} = useParams ()
     {
       id: 4,
       nombre: "Mantenimiento Web",
-      descripcion: "Productos para el cuidado y mantenimiento.",
+      descripcion: "",
       stock: 10,
       categoria: "SIS2",
       precio: 23000,
