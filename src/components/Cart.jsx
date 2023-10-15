@@ -72,12 +72,14 @@ const Cart = () => {
           </Stack>
         )
       })}
+
       <Box pt="4">
         <Text>Total a pagar: {total}</Text>
       </Box>
+      
       <Stack direction={['column', 'row']} spacing='24px' pt="4">
         <Button colorScheme='red' onClick={() => vaciarCarrito()}>Vaciar Carrito</Button>
-        <Button colorScheme='blue' onClick={() => navigate('/checkout')}>Comprar</Button>
+        <Button colorScheme='blue' onClick={() => navigate('/checkout')} disabled={cart.length === 0}>Comprar</Button>
       </Stack>
     </Box>
   );

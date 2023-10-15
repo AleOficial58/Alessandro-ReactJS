@@ -8,7 +8,7 @@ const ItemDetailContainer = () => {
     {
       id: 1,
       nombre: "Desarrollo Web Full Sack",
-      descripcion: "Desarrollo de una web completa",
+      descripcion: "Creamos tu sitio web utilizando las últimas tecnologías disponibles.",
       stock: 10,
       categoria: "",
       precio: 2050,
@@ -18,7 +18,7 @@ const ItemDetailContainer = () => {
     {
       id: 2,
       nombre: "JavaScript",
-      descripcion: "La pagina mas desarrollada del mundo",
+      descripcion: "Preparado para enfrentar el desafío.",
       stock: 7,
       categoria: "",
       precio: 7000,
@@ -28,7 +28,7 @@ const ItemDetailContainer = () => {
     {
       id: 3,
       nombre: "React JS",
-      descripcion: "LISTA PARA SALIR A PELEAR",
+      descripcion: "Productos para el cuidado y mantenimiento.",
       stock: 3,
       categoria: "",
       precio: 17000,
@@ -38,7 +38,7 @@ const ItemDetailContainer = () => {
     {
       id: 4,
       nombre: "Mantenimiento Web",
-      descripcion: "productos de mantenimiento",
+      descripcion: "Artículos de mantenimiento.",
       stock: 10,
       categoria: "SIS2",
       precio: 23000,

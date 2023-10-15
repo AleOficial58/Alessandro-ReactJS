@@ -12,7 +12,7 @@ const {categoria} = useParams ()
     {
       id: 1,
       nombre: "Desarrollo Web Full Sack",
-      descripcion: "Desarrollamos tu pagina web con todas las tecnologias",
+      descripcion: "Creamos tu sitio web utilizando las últimas tecnologías disponibles.",
       stock: 10,
       categoria: "SIS1",
       precio: 2050,
@@ -22,7 +22,7 @@ const {categoria} = useParams ()
     {
       id: 2,
       nombre: "JavaScript",
-      descripcion: "La pagina mas desarrollada del mundo",
+      descripcion: "El sitio web más avanzado del mundo.",
       stock: 7,
       categoria: "SIS1",
       precio: 7000,
@@ -31,7 +31,7 @@ const {categoria} = useParams ()
     {
       id: 3,
       nombre: "React JS",
-      descripcion: "LISTA PARA SALIR A PELEAR",
+      descripcion: "Preparado para enfrentar el desafío.",
       stock: 3,
       categoria: "SIS1",
       precio: 17000,
@@ -40,7 +40,7 @@ const {categoria} = useParams ()
     {
       id: 4,
       nombre: "Mantenimiento Web",
-      descripcion: "productos de mantenimiento",
+      descripcion: "Productos para el cuidado y mantenimiento.",
       stock: 10,
       categoria: "SIS2",
       precio: 23000,
