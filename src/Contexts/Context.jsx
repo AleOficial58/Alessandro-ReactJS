@@ -10,3 +10,6 @@ export const ShopContext = ({ children }) => {
         </CartContext.Provider>
     )
 }
+
+
+/*4.1 Final Version | Final Development Project 4/4*/
