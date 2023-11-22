@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom";
 import { CartContext } from '../Contexts/Context';
 import { FinalizarCompra } from '../JS/Carrito'
 
-
 function Checkout() {
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
@@ -46,11 +45,11 @@ function Checkout() {
       });
     } else {
       FinalizarCompra(cart, nombre, apellido, dni, email)
-        .then(() => {
+        .then((id) => {
           setLoading(false)
           Swal.fire({
             title: 'Compra finalizada',
-            text: `¡Gracias por tu compra, ${nombre} ${apellido}! Hemos enviado la confirmación a ${email}`,
+            text: `¡Gracias por tu compra, ${nombre} ${apellido}! Hemos enviado la confirmación a ${email}. Tu id de compra es ${id}`,
             icon: 'success',
             confirmButtonText: 'Aceptar',
           });

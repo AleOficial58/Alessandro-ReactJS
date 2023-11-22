@@ -25,19 +25,22 @@ const ItemCount = ({ producto }) => {
 
     const onAdd = () => {
         if (contador > 0) {
-            debugger
             let prod = {
                 ...producto,
                 cantidad: contador,
-              
             }
-            debugger
-            setCart([...cart, prod])
+            if(cart.filter(item => item.id === producto.id).length > 0) {
+                let carrito = cart
+                carrito.filter(item => item.id === producto.id).map(pro => {
+                    pro.cantidad += contador
+                })
+                setCart(carrito)
+            }else{
+                setCart([...cart, prod])
+            }
+            setContador(0)
         }
     }
-
-
-
     return (
         <>
             <div className='contador'>

@@ -24,13 +24,12 @@ const NavBar = () => {
           <Spacer bg="burlywood" />
           <Box bg="burlywood" p="4">
             <Menu>
-              <MenuButton>
-                <p className="menu">Secciones</p>
+              <MenuButton className="menu">
+                Secciones
               </MenuButton>
               <MenuList>
-                <MenuItem><Link to={`/categoria/${"SIS1"}`}>Sistema I</Link></MenuItem>
-                <MenuItem><Link to={`/categoria/${"SIS2"}`}>Sistema II</Link></MenuItem>
-                <MenuItem><Link to={`/categoria/${"SIS3"}`}>Sistema III</Link></MenuItem>
+                <Link to={`/categoria/${"SIS1"}`}><MenuItem as="a">Sistema I</MenuItem></Link>
+                <Link to={`/categoria/${"SIS2"}`}><MenuItem as="a">Sistema II</MenuItem></Link>
               </MenuList>
             </Menu>
           </Box>

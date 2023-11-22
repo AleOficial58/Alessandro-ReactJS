@@ -5,6 +5,7 @@ import { CartContext } from '../Contexts/Context'
 const CartWidget = () => {
     const [cart, setCart] = React.useContext(CartContext)
     const [cantidad, setCantidad] = React.useState(0)
+    
     React.useEffect(() => {
         if (cart?.length > 0) {
             let contador = 0
