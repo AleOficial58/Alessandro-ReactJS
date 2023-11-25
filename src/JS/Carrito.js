@@ -12,7 +12,7 @@ export async function FinalizarCompra(productos, nombre, apellido, dni, email) {
             })
             let productosArray = []
             productos.forEach(item => {
-                var prod = {
+                let prod = {
                     id: item.id,
                     nombre: item.nombre
                 }
@@ -58,9 +58,9 @@ export async function ObtenerProductos() {
 
 
 function generateUUID() {
-    var d = new Date().getTime();
-    var uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-        var r = (d + Math.random() * 16) % 16 | 0;
+    let d = new Date().getTime();
+    let uuid = 'xxxxxxxxxxxx4xxxyxxxxxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+        let r = (d + Math.random() * 16) % 16 | 0;
         d = Math.floor(d / 16);
         return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
     });

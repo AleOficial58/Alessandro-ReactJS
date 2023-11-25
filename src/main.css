@@ -126,3 +126,31 @@
     cursor: pointer;
     /* Agrega más estilos según sea necesario */
   }
+
+/* Estilo base para pantallas grandes */
+.diseño1 {
+  align-items: center;
+  margin-left: 700px;
+  margin-top: 50px;
+}
+
+/* Ajuste para pantallas más pequeñas utilizando media queries */
+@media screen and (max-width: 1200px) {
+  .diseño1 {
+      margin-left: 500px; /* Ajusta el valor según sea necesario */
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .diseño1 {
+      margin-left: 300px; /* Ajusta el valor según sea necesario */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .diseño1 {
+      margin-left: 100px; /* Ajusta el valor según sea necesario */
+  }
+}
+
+/* Puedes agregar más media queries según sea necesario para adaptarse a diferentes tamaños de pantalla */

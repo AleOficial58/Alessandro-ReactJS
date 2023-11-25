@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Button, Input } from "@chakra-ui/react";
 import Swal from 'sweetalert2';
-import { useNavigate } from "react-router-dom";
+import { Form, useNavigate } from "react-router-dom";
 import { CartContext } from '../Contexts/Context';
 import { FinalizarCompra } from '../JS/Carrito'
 
@@ -34,59 +34,67 @@ function Checkout() {
   };
 
   const handleFinalizarCompra = () => {
-    setLoading(true)
-    if (nombre.trim() === '' || apellido.trim() === '' || dni.trim() === '' || email.trim() === '') {
-      setLoading(false)
+    //VALIDAR PRODUCTO
+    if (cart.lenght > 0) {
+      setLoading(true)
+      if (nombre.trim() === '' || apellido.trim() === '' || dni.trim() === '' || email.trim() === '') {
+        setLoading(false)
+        Swal.fire({
+          title: 'Error',
+          text: 'Por favor, completa todos los campos',
+          icon: 'error',
+          confirmButtonText: 'Aceptar',
+        });
+      } else {
+        FinalizarCompra(cart, nombre, apellido, dni, email)
+          .then((id) => {
+            setLoading(false)
+            Swal.fire({
+              title: 'Compra finalizada',
+              text: `¡Gracias por tu compra, ${nombre} ${apellido}! Hemos enviado la confirmación a ${email}. Tu id de compra es ${id}`,
+              icon: 'success',
+              confirmButtonText: 'Aceptar',
+            });
+            setCart([])
+            navigate("/");
+          })
+          .catch(error => {
+            setLoading(false)
+            Swal.fire({
+              title: 'Error',
+              text: 'Error al realizar compra',
+              icon: 'error',
+              confirmButtonText: 'Aceptar',
+            });
+          })
+      }
+    } else {
       Swal.fire({
         title: 'Error',
-        text: 'Por favor, completa todos los campos',
+        text: 'Debes agregar productos para realizar la compra',
         icon: 'error',
         confirmButtonText: 'Aceptar',
       });
-    } else {
-      FinalizarCompra(cart, nombre, apellido, dni, email)
-        .then((id) => {
-          setLoading(false)
-          Swal.fire({
-            title: 'Compra finalizada',
-            text: `¡Gracias por tu compra, ${nombre} ${apellido}! Hemos enviado la confirmación a ${email}. Tu id de compra es ${id}`,
-            icon: 'success',
-            confirmButtonText: 'Aceptar',
-          });
-          setCart([])
-          navigate("/");
-        })
-        .catch(error => {
-          setLoading(false)
-          Swal.fire({
-            title: 'Error',
-            text: 'Error al realizar compra',
-            icon: 'error',
-            confirmButtonText: 'Aceptar',
-          });
-        })
-
     }
   };
 
-  
+
 
   return (
     <div>
       {/* Formulario para ingresar datos */}
-
       <h3 className="input-informacion">Información del comprador</h3>
       <div className="input-container">
-        <Input placeholder="Nombre" value={nombre} onChange={handleNombreChange} />
-        <Input placeholder="Apellido" value={apellido} onChange={handleApellidoChange} />
-        <Input placeholder="DNI" value={dni} onChange={handleDNIChange} />
-        <Input placeholder="Email" value={email} onChange={handleEmailChange} />
-        <Button onClick={handleFinalizarCompra} disabled={loading}>Finalizar Compra</Button>
+        <form onSubmit={handleFinalizarCompra}>
+          <Input placeholder="Nombre" type="text" value={nombre} onChange={handleNombreChange} />
+          <Input placeholder="Apellido" type="text" value={apellido} onChange={handleApellidoChange} />
+          <Input placeholder="DNI" type="text" value={dni} onChange={handleDNIChange} />
+          <Input placeholder="Email" type="email" value={email} onChange={handleEmailChange} />
+          <Button type="submit" disabled={loading}>Finalizar Compra</Button>
+          {/* <Button onClick={handleFinalizarCompra} disabled={loading}>Finalizar Compra</Button> */}
+        </form>
       </div>
-
     </div>
-
-    
   );
 }
 

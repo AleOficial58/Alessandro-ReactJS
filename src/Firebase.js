@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 
-var firebaseConfig = {
+let firebaseConfig = {
     apiKey: "AIzaSyDM3csSfqAV_P4Z_fV4ff7s5mnqvufPiac",
     authDomain: "trabajofinalreactale.firebaseapp.com",
     projectId: "trabajofinalreactale",
