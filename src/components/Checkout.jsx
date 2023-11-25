@@ -86,12 +86,21 @@ function Checkout() {
       <h3 className="input-informacion">Información del comprador</h3>
       <div className="input-container">
         <form onSubmit={handleFinalizarCompra}>
-          <Input placeholder="Nombre" type="text" value={nombre} onChange={handleNombreChange} />
-          <Input placeholder="Apellido" type="text" value={apellido} onChange={handleApellidoChange} />
-          <Input placeholder="DNI" type="text" value={dni} onChange={handleDNIChange} />
-          <Input placeholder="Email" type="email" value={email} onChange={handleEmailChange} />
-          <Button type="submit" disabled={loading}>Finalizar Compra</Button>
-          {/* <Button onClick={handleFinalizarCompra} disabled={loading}>Finalizar Compra</Button> */}
+          <div className="responsive-input-container">
+            <Input placeholder="Nombre" type="text" value={nombre} onChange={handleNombreChange} />
+          </div>
+          <div className="responsive-input-container">
+            <Input placeholder="Apellido" type="text" value={apellido} onChange={handleApellidoChange} />
+          </div>
+          <div className="responsive-input-container">
+            <Input placeholder="DNI" type="text" value={dni} onChange={handleDNIChange} />
+          </div>
+          <div className="responsive-input-container">
+            <Input placeholder="Email" type="email" value={email} onChange={handleEmailChange} />
+          </div>
+          <div className="responsive-input-container">
+            <Button type="submit" disabled={loading}>Finalizar Compra</Button>
+          </div>
         </form>
       </div>
     </div>

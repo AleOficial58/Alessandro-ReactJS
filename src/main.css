@@ -153,4 +153,37 @@
   }
 }
 
-/* Puedes agregar más media queries según sea necesario para adaptarse a diferentes tamaños de pantalla */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.responsive-input-container {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Estilos para campos de entrada */
+Input {
+  width: 100%; /* Ajusta el ancho de todos los campos de entrada al 100% */
+  padding: 10px; /* Ajusta el relleno para un mejor aspecto */
+  margin-bottom: 10px; /* Agrega espacio entre los campos de entrada */
+}
+
+/* Estilos específicos para pantallas grandes */
+@media (min-width: 200px) {
+  .responsive-input-container {
+    width: 400%; /* Ajusta el ancho de los campos de entrada en pantallas más grandes */
+  }
+
+  Input {
+    width: 100%; /* Puedes ajustar esto según tus necesidades específicas */
+  }
+}
