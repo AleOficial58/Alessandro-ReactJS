@@ -33,59 +33,63 @@ function Checkout() {
     setEmail(e.target.value);
   };
 
-  const handleFinalizarCompra = () => {
+  const handleFinalizarCompra = (e) => {
+    e.preventDefault();
     //VALIDAR PRODUCTO
-    if (cart.lenght > 0) {
-      setLoading(true)
-      if (nombre.trim() === '' || apellido.trim() === '' || dni.trim() === '' || email.trim() === '') {
-        setLoading(false)
-        Swal.fire({
-          title: 'Error',
-          text: 'Por favor, completa todos los campos',
-          icon: 'error',
-          confirmButtonText: 'Aceptar',
-        });
-      } else {
-        FinalizarCompra(cart, nombre, apellido, dni, email)
-          .then((id) => {
-            setLoading(false)
-            Swal.fire({
-              title: 'Compra finalizada',
-              text: `¡Gracias por tu compra, ${nombre} ${apellido}! Hemos enviado la confirmación a ${email}. Tu id de compra es ${id}`,
-              icon: 'success',
-              confirmButtonText: 'Aceptar',
-            });
-            setCart([])
-            navigate("/");
-          })
-          .catch(error => {
-            setLoading(false)
-            Swal.fire({
-              title: 'Error',
-              text: 'Error al realizar compra',
-              icon: 'error',
-              confirmButtonText: 'Aceptar',
-            });
-          })
-      }
-    } else {
+    debugger
+    if (cart.length === 0) {
+      setLoading(false)
       Swal.fire({
         title: 'Error',
         text: 'Debes agregar productos para realizar la compra',
         icon: 'error',
         confirmButtonText: 'Aceptar',
       });
+      return
     }
+
+    if (nombre.trim() === '' || apellido.trim() === '' || dni.trim() === '' || email.trim() === '') {
+      setLoading(false)
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor, completa todos los campos',
+        icon: 'error',
+        confirmButtonText: 'Aceptar',
+      });
+      return
+    }
+
+    setLoading(true)
+    FinalizarCompra(cart, nombre, apellido, dni, email)
+      .then((id) => {
+        debugger
+        setLoading(false)
+        Swal.fire({
+          title: 'Compra finalizada',
+          text: `¡Gracias por tu compra, ${nombre} ${apellido}! Hemos enviado la confirmación a ${email}. Tu id de compra es ${id}`,
+          icon: 'success',
+          confirmButtonText: 'Aceptar',
+        });
+        setCart([])
+        navigate("/");
+      })
+      .catch(error => {
+        setLoading(false)
+        Swal.fire({
+          title: 'Error',
+          text: 'Error al realizar compra',
+          icon: 'error',
+          confirmButtonText: 'Aceptar',
+        });
+      })
   };
-
-
 
   return (
     <div>
       {/* Formulario para ingresar datos */}
       <h3 className="input-informacion">Información del comprador</h3>
       <div className="input-container">
-        <form onSubmit={handleFinalizarCompra}>
+        <form onSubmit={e => handleFinalizarCompra(e)}>
           <div className="responsive-input-container">
             <Input placeholder="Nombre" type="text" value={nombre} onChange={handleNombreChange} />
           </div>
